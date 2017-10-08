@@ -1,0 +1,40 @@
+Improving RMS exercise with Django REST interface
+
+Django superuser:
+name -> admin
+password -> password123
+
+
+1) http://<root>/initialize
+Download the zipped shapefile , unzip it, check it and fix its coordinates, upload to database
+
+returns:
+{"success": True, "content": "shapefile downloaded,unzipped,checked ,and uploaded to database"}
+{"success": False, "content": ""<error string>""}
+
+
+2) http://<root>/getstates
+Returns the USA states polygons in GeoJson format
+
+returns:
+{"success": True, "content": <geojson>})
+{"success": False, "content": ""<error string>""}
+
+3) http://<root>/addpoint
+GET parameters are
+x -> longitude in WGS84
+y -> latitude in WGS84
+label -> text
+
+Upload a point to database table. The point will be added only if inside the USA. Decimal digits determine the marker size.
+
+returns:
+{"success": True, "content": {"x":<x>, "y":<y>, "label":"<label>", "size": <size>}}
+{"success": False, "content": ""<error string>""}
+
+4)  http://<root>/allpoints
+Returns all the points in GeoJson format
+
+returns:
+{"success": True, "content": <geojson>})
+{"success": False, "content": ""<error string>""}
