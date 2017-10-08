@@ -7,7 +7,7 @@ password -> password123
 On Windows use  'py -3.5 manage.py runserver' to start the local server running at localhost:8000
 
 
-1) http://<root>/initialize
+1) http://localhost:8000/initialize
 Download the zipped shapefile , unzip it, check it and fix its coordinates, upload to database
 
 returns:
@@ -15,18 +15,19 @@ returns:
 {"success": False, "content": ""<error string>""}
 
 
-2) http://<root>/getstates
+2) http://localhost:8000/getstates
 Returns the USA states polygons in GeoJson format
 
 returns:
 {"success": True, "content": <geojson>})
 {"success": False, "content": ""<error string>""}
 
-3) http://<root>/addpoint
+3) http://localhost:8000/addpoint
 GET parameters are
 x -> longitude in WGS84
 y -> latitude in WGS84
 label -> text
+e.g. http://localhost:8000/addpoint?x=-110.98&y=45.45&label=McDonald
 
 Upload a point to database table. The point will be added only if inside the USA. Decimal digits determine the marker size.
 
@@ -34,7 +35,7 @@ returns:
 {"success": True, "content": {"x":<x>, "y":<y>, "label":"<label>", "size": <size>}}
 {"success": False, "content": ""<error string>""}
 
-4)  http://<root>/allpoints
+4)  http://localhost:8000/allpoints
 Returns all the points in GeoJson format
 
 returns:
