@@ -4,6 +4,8 @@ Django superuser:
 name -> admin
 password -> password123
 
+On Windows use  'py -3.5 manage.py runserver' to start the local server running at localhost:8000
+
 
 1) http://<root>/initialize
 Download the zipped shapefile , unzip it, check it and fix its coordinates, upload to database
@@ -38,3 +40,4 @@ Returns all the points in GeoJson format
 returns:
 {"success": True, "content": <geojson>})
 {"success": False, "content": ""<error string>""}
+lhost:8000
