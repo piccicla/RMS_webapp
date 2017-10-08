@@ -41,4 +41,3 @@ Returns all the points in GeoJson format.
 returns:
 {"success": True, "content": <geojson>})
 {"success": False, "content": ""<error string>""}
-lhost:8000
